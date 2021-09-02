@@ -53,10 +53,13 @@ const data = {
 
 function View({...rest}) {
   return (
-    <div className={cn("bg-secondary")}>
-      <Tree jsonData={data} />
-      <div style={{ height: "100vh", visibility: 'hidden' }}></div>
-      <Table />
+    <div className={cn("bg-secondary w-screen h-screen flex flex-col relative h-full")}>
+      <div className={cn("w-1/5 h-full")}>
+        <Tree jsonData={data} />
+      </div>
+      <div className={cn("w-4/5")}>
+        <Table />
+      </div>
     </div>
   );
 }

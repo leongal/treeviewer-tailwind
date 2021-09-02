@@ -40,9 +40,10 @@ function Tree({ jsonData, children, className, ...rest }) {
     </TreeItem>
   );
   return (
-    <div className={cn("bg-primary")}>
+    <div className={cn("bg-primary rounded p-1")}>
       <TreeView
         className={cn("text-left")}
+        style={{color: "white"}}
         defaultCollapseIcon={ <MinusSquare /> }
         defaultExpandIcon={ <PlusSquare /> }
       >
