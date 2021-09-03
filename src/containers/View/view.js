@@ -2,7 +2,7 @@ import React from 'react'
 import { ReactDOM } from 'react-dom'
 import cn from 'classnames'
 import Tree from '../../components/tree/tree'
-import Table from '../../components/table/table'
+import StickyHeadTable from '../../components/table/table'
 
 const data = {
   id: 'root',
@@ -53,12 +53,12 @@ const data = {
 
 function View({...rest}) {
   return (
-    <div className={cn("bg-secondary w-screen h-screen flex flex-col relative h-full")}>
+    <div className={cn("bg-secondary w-screen h-screen flex flex-row relative h-full")}>
       <div className={cn("w-1/5 h-full")}>
         <Tree jsonData={data} />
       </div>
       <div className={cn("w-4/5")}>
-        <Table />
+        <StickyHeadTable />
       </div>
     </div>
   );

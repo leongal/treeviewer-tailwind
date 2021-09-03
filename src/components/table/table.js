@@ -1,4 +1,5 @@
 import React from 'react';
+import cn from 'classnames';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
@@ -10,29 +11,32 @@ import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 
 const columns = [
-  { id: 'name', label: 'Name', minWidth: 170 },
-  { id: 'code', label: 'ISO\u00a0Code', minWidth: 100 },
-  {
-    id: 'population',
-    label: 'Population',
-    minWidth: 170,
-    align: 'right',
-    format: (value) => value.toLocaleString('en-US'),
-  },
-  {
-    id: 'size',
-    label: 'Size\u00a0(km\u00b2)',
-    minWidth: 170,
-    align: 'right',
-    format: (value) => value.toLocaleString('en-US'),
-  },
-  {
-    id: 'density',
-    label: 'Density',
-    minWidth: 170,
-    align: 'right',
-    format: (value) => value.toFixed(2),
-  },
+  { id: 'Column01', label: 'Column01', minWidth: 170 },
+  { id: 'Column02', label: 'Column02', minWidth: 170 },
+  { id: 'Column03', label: 'Column03', minWidth: 170 },
+  { id: 'Column04', label: 'Column04', minWidth: 170 },
+  { id: 'Column05', label: 'Column05', minWidth: 170 },
+  { id: 'Column06', label: 'Column06', minWidth: 170 },
+  { id: 'Column07', label: 'Column07', minWidth: 170 },
+  { id: 'Column08', label: 'Column08', minWidth: 170 },
+  { id: 'Column09', label: 'Column09', minWidth: 170 },
+  { id: 'Column10', label: 'Column10', minWidth: 170 },
+  { id: 'Column11', label: 'Column11', minWidth: 170 },
+  { id: 'Column12', label: 'Column12', minWidth: 170 },
+  { id: 'Column13', label: 'Column13', minWidth: 170 },
+  { id: 'Column14', label: 'Column14', minWidth: 170 },
+  { id: 'Column15', label: 'Column15', minWidth: 170 },
+  { id: 'Column16', label: 'Column16', minWidth: 170 },
+  { id: 'Column17', label: 'Column17', minWidth: 170 },
+  { id: 'Column18', label: 'Column18', minWidth: 170 },
+  { id: 'Column19', label: 'Column19', minWidth: 170 },
+  { id: 'Column20', label: 'Column20', minWidth: 170 },
+  { id: 'Column21', label: 'Column21', minWidth: 170 },
+  { id: 'Column22', label: 'Column22', minWidth: 170 },
+  { id: 'Column23', label: 'Column23', minWidth: 170 },
+  { id: 'Column24', label: 'Column24', minWidth: 170 },
+  { id: 'Column25', label: 'Column25', minWidth: 170 },
+  { id: 'Column26', label: 'Column26', minWidth: 170 },
 ];
 
 function createData(name, code, population, size) {
@@ -58,17 +62,7 @@ const rows = [
   createData('Brazil', 'BR', 210147125, 8515767),
 ];
 
-const useStyles = makeStyles({
-  root: {
-    width: '100%',
-  },
-  container: {
-    maxHeight: 440,
-  },
-});
-
 export default function StickyHeadTable() {
-  const classes = useStyles();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
@@ -82,16 +76,17 @@ export default function StickyHeadTable() {
   };
 
   return (
-    <Paper className={classes.root}>
-      <TableContainer className={classes.container}>
+    <Paper className={cn("w-full")}>
+      <TableContainer className={cn("max-h-full")}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
-            <TableRow>
+            <TableRow >
               {columns.map((column) => (
                 <TableCell
+                  className={cn("min-w-min max-h-full p-1.5")}
                   key={column.id}
                   align={column.align}
-                  style={{ minWidth: column.minWidth }}
+                  // style={{ minWidth: column.minWidth }}
                 >
                   {column.label}
                 </TableCell>
@@ -117,7 +112,6 @@ export default function StickyHeadTable() {
         </Table>
       </TableContainer>
       <TablePagination
-        rowsPerPageOptions={[10, 25, 100]}
         component="div"
         count={rows.length}
         rowsPerPage={rowsPerPage}
