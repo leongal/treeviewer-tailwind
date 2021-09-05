@@ -100,10 +100,11 @@ function Table({ columns, data }) {
                               className="px-3 text-center border border-secondary"
                               role="cell"
                             >
-                              {cell.column.Cell.name === "defaultRenderer"
-                                ? <div className="text-sm ">{cell.render('Cell')}</div>
+                              {/* {cell.column.Cell.name === "defaultRenderer"
+                                ? <div className="lg:text-sm sm:text-xs">{cell.render('Cell')}</div>
                                 : cell.render('Cell')
-                              }
+                              } */}
+                              <div className="lg:text-sm sm:text-xs">{cell.render('Cell')}</div>
                             </td>
                           )
                         })}
