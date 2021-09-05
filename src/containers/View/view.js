@@ -2,9 +2,9 @@ import React from 'react'
 import { ReactDOM } from 'react-dom'
 import cn from 'classnames'
 import Tree from '../../components/tree/tree'
-import StickyHeadTable from '../../components/table/table'
+import Table from '../../components/table/table'
 
-const data = {
+const tree_data = {
   id: 'root',
   name: 'ASSET CLASSIFICATION',
   children: [
@@ -51,14 +51,95 @@ const data = {
   ],
 };
 
+const getData = () => {
+  const data = [
+    {
+      column01: 1,
+      column02: 'LEVEL00',
+      column03: 'LEVEL01',
+      column04: 'LEVEL02',
+      column05: 'LEVEL02',
+      column06: 'LEVEL03',
+      column07: 2019,
+    },
+    {
+      column01: 2,
+      column02: 'LEVEL00',
+      column03: 'LEVEL01',
+      column04: 'LEVEL02',
+      column05: 'LEVEL02',
+      column06: 'LEVEL03',
+      column07: 2019,
+    },
+    {
+      column01: 3,
+      column02: 'LEVEL00',
+      column03: 'LEVEL01',
+      column04: 'LEVEL02',
+      column05: 'LEVEL02',
+      column06: 'LEVEL03',
+      column07: 2019,
+    },
+    {
+      column01: 4,
+      column02: 'LEVEL00',
+      column03: 'LEVEL01',
+      column04: 'LEVEL02',
+      column05: 'LEVEL02',
+      column06: 'LEVEL03',
+      column07: 2019,
+    },
+  ]
+  return [...data, ...data, ...data]
+}
+
 function View({...rest}) {
+  const columns = React.useMemo(() => [
+    {
+      Header: "Column01",
+      accessor: 'column01',
+    },
+    {
+      Header: "Column02",
+      accessor: 'column02',
+    },
+    {
+      Header: "Column03",
+      accessor: 'column03',
+    },
+    {
+      Header: "Column04",
+      accessor: 'column04',
+    },
+    {
+      Header: "Column05",
+      accessor: 'column05',
+    },
+    {
+      Header: "Column06",
+      accessor: 'column06',
+    },
+    {
+      Header: "Column07",
+      accessor: 'column07',
+    },
+  ], [])
+
+  const data = React.useMemo(() => getData(), [])
+
   return (
     <div className={cn("bg-secondary w-screen h-screen flex flex-row relative h-full")}>
       <div className={cn("w-1/5 h-full")}>
-        <Tree jsonData={data} />
+        <Tree jsonData={tree_data} />
       </div>
       <div className={cn("w-4/5")}>
-        <StickyHeadTable />
+        <div className="min-h-screen bg-gray-100 text-gray-900">
+          <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+            <div className="mt-6">
+              <Table columns={columns} data={data} />
+            </div>
+          </main>
+        </div>
       </div>
     </div>
   );
