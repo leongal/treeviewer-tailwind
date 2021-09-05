@@ -1,5 +1,5 @@
 import React from 'react'
-import { useTable, useFilters, useGlobalFilter, useAsyncDebounce, useSortBy, usePagination, useResizeColumns, useBlockLayout } from 'react-table'
+import { useTable, useFilters, useGlobalFilter, useSortBy, usePagination, useResizeColumns, useBlockLayout } from 'react-table'
 import { ChevronDoubleLeftIcon, ChevronLeftIcon, ChevronRightIcon, ChevronDoubleRightIcon } from '@heroicons/react/solid'
 import { Button, PageButton } from '../../assets/Button'
 import { classNames } from '../../assets/Utils'
@@ -48,21 +48,20 @@ function Table({ columns, data }) {
   return (
     <>
       {/* table */}
-      <div className="mt-4 flex flex-col">
+      <div className="flex flex-col">
         <div className="-my-2 overflow-x-auto -mx-4 sm:-mx-6 lg:-mx-8">
-          <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-            <div className="overflow-hidden border-b">
-              <table {...getTableProps()} className="min-w-full divide-y border-2 border-gray-200 divide-gray-200">
-                <thead className={"bg-black"}>
+          <div className="py-2 align-middle inline-block sm:px-6 lg:px-8">
+            <div className="overflow-hidden">
+              <table {...getTableProps()} className="divide-y divide-gray-200">
+                <thead >
                   {headerGroups.map(headerGroup => (
                     <tr {...headerGroup.getHeaderGroupProps()}>
                       {headerGroup.headers.map(column => (
                         // Add the sorting props to control sorting. For this example
                         // we can add them into the header props
                         <th
-                          scope="col"
-                          className={"group px-6 py-3 text-xs font-medium text-white uppercase tracking-wider border border-gray-300"}
                           {...column.getHeaderProps(column.getSortByToggleProps())}
+                          className={"px-6 py-3 text-xs font-medium tracking-wider bg-black border border-secondary text-white"}
                         >
                           <div className="flex items-center text-center justify-center">
                             {column.render('Header')}
@@ -70,10 +69,10 @@ function Table({ columns, data }) {
                             <span>
                               {column.isSorted
                                 ? column.isSortedDesc
-                                  ? <SortDownIcon className="w-4 h-4 text-gray-400" />
-                                  : <SortUpIcon className="w-4 h-4 text-gray-400" />
+                                  ? <SortDownIcon className="w-4 h-4 text-white" />
+                                  : <SortUpIcon className="w-4 h-4 text-white" />
                                 : (
-                                  <SortIcon className="w-4 h-4 text-gray-400 opacity-0 group-hover:opacity-100" />
+                                  <SortIcon className="w-4 h-4 text-white" />
                                 )}
                             </span>
                             <div
@@ -93,16 +92,16 @@ function Table({ columns, data }) {
                   {page.map((row, i) => {  // new
                     prepareRow(row)
                     return (
-                      <tr {...row.getRowProps()} className={i%2?"bg-third":"bg-primary"}>
+                      <tr {...row.getRowProps()} className={i%2?"bg-third":"bg-primary text-white"}>
                         {row.cells.map(cell => {
                           return (
                             <td
                               {...cell.getCellProps()}
-                              className="px-3 py-2 border border-gray-200 text-center"
+                              className="px-3 text-center border border-secondary"
                               role="cell"
                             >
                               {cell.column.Cell.name === "defaultRenderer"
-                                ? <div className="text-sm text-gray-500">{cell.render('Cell')}</div>
+                                ? <div className="text-sm ">{cell.render('Cell')}</div>
                                 : cell.render('Cell')
                               }
                             </td>
@@ -123,7 +122,7 @@ function Table({ columns, data }) {
           <Button onClick={() => previousPage()} disabled={!canPreviousPage}>Previous</Button>
           <Button onClick={() => nextPage()} disabled={!canNextPage}>Next</Button>
         </div>
-        <div className="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+        <div className="hidden sm:flex-1 sm:flex sm:items-center">
           <div className="flex gap-x-2 items-baseline">
             <span className="text-sm text-gray-700">
               Page <span className="font-medium">{state.pageIndex + 1}</span> of <span className="font-medium">{pageOptions.length}</span>
@@ -145,7 +144,7 @@ function Table({ columns, data }) {
               </select>
             </label>
           </div>
-          <div>
+          <div className="ml-4">
             <nav className="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
               <PageButton
                 className="rounded-l-md"

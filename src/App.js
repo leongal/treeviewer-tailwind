@@ -5,9 +5,9 @@ import View from './containers/View/view';
 
 function App() {
   return (
-    <div className={cn("bg-black")}>
+    <>
       <View />
-    </div>
+    </>
   );
 }
 

@@ -1,5 +1,4 @@
 import React from 'react'
-import { ReactDOM } from 'react-dom'
 import cn from 'classnames'
 import Tree from '../../components/tree/tree'
 import Table from '../../components/table/table'
@@ -128,18 +127,12 @@ function View({...rest}) {
   const data = React.useMemo(() => getData(), [])
 
   return (
-    <div className={cn("bg-secondary w-screen h-screen flex flex-row relative h-full")}>
-      <div className={cn("w-1/5 h-full")}>
+    <div className={cn("bg-black w-screen h-screen flex flex-row relative h-full")}>
+      <div className={cn("lg:w-1/5 h-full p-1 bg-secondary rounded")}>
         <Tree jsonData={tree_data} />
       </div>
-      <div className={cn("w-4/5")}>
-        <div className="min-h-screen bg-gray-100 text-gray-900">
-          <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
-            <div className="mt-6">
-              <Table columns={columns} data={data} />
-            </div>
-          </main>
-        </div>
+      <div className={cn("lg:w-4/5 h-full overflow-auto p-1 bg-secondary rounded ml-4")}>
+        <Table columns={columns} data={data} />
       </div>
     </div>
   );
