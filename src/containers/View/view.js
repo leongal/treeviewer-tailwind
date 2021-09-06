@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import cn from 'classnames'
 import Tree from '../../components/tree/tree'
 import Table from '../../components/table/table'
-import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/react/solid'
+import { ChevronRightIcon, ChevronLeftIcon, ChevronMenuIcon } from '@heroicons/react/solid'
 
 const tree_data = {
       id: 'root',
@@ -125,10 +125,10 @@ function View({...rest}) {
 
   return (
     <div className={cn("bg-black w-screen h-screen flex flex-row relative h-full")}>
-      <div className={"md:hidden block fixed z-10 h-8 w-8 rounded-3xl opacity-50 hover:opacity-100 bg-white"} onClick={() => setshowTree(!showTree)}>
-        { showTree ? <ChevronLeftIcon className="text-green-400" aria-hidden="true" /> : <ChevronRightIcon className="text-green-400" aria-hidden="true" />}
+      <div className={ cn( showTree ? "left-1/2.27 " : "", "md:hidden block top-1/2 fixed z-20 h-8 w-8 rounded-3xl opacity-50 hover:opacity-100 bg-white") } onClick={() => setshowTree(!showTree)}>
+        { showTree ? <ChevronLeftIcon className="text-gray-400" aria-hidden="true" /> : <ChevronRightIcon className="text-gray-400" aria-hidden="true" /> }
       </div>
-      <div className={cn("w-1/5 hidden md:block relative h-full p-1 bg-secondary rounded")}>
+      <div className={cn( showTree ? "block  shadow-2xl" : "hidden", "w-1/2 md:block md:w-1/5 fixed z-10 left-0 top-0 md:relative h-full p-1 bg-secondary rounded")}>
         <Tree jsonData={tree_data} />
       </div>
       <div className={cn("md:w-4/5 w-full relative h-full overflow-auto p-1 bg-secondary rounded md:ml-4")}>

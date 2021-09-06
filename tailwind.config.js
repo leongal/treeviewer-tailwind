@@ -9,6 +9,9 @@ module.exports = {
         'third': '#cdcdcd',
         'root_node': '#242424',
       },
+      inset: {
+        '1/2.27': '44%',
+      }
     },
   },
   variants: {
