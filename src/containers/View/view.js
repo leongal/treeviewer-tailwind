@@ -2,6 +2,7 @@ import React from 'react'
 import cn from 'classnames'
 import Tree from '../../components/tree/tree'
 import Table from '../../components/table/table'
+import { ChevronRightIcon } from '@heroicons/react/solid'
 
 const tree_data = {
       id: 'root',
@@ -122,10 +123,13 @@ function View({...rest}) {
 
   return (
     <div className={cn("bg-black w-screen h-screen flex flex-row relative h-full")}>
-      <div className={cn("lg:w-1/5 relative h-full p-1 bg-secondary rounded")}>
+      <div className={"md:hidden block fixed z-10 h-8 w-8 rounded-3xl opacity-50 hover:opacity-100 bg-white"}>
+        <ChevronRightIcon className="text-green-400" aria-hidden="true" />
+      </div>
+      <div className={cn("w-1/5 hidden md:block relative h-full p-1 bg-secondary rounded")}>
         <Tree jsonData={tree_data} />
       </div>
-      <div className={cn("lg:w-4/5 relative h-full overflow-auto p-1 bg-secondary rounded lg:ml-4 ml-2")}>
+      <div className={cn("md:w-4/5 w-full relative h-full overflow-auto p-1 bg-secondary rounded md:ml-4")}>
         <Table columns={columns} data={data} />
       </div>
     </div>
