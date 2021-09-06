@@ -49,8 +49,8 @@ function Table({ columns, data }) {
     <>
       {/* table */}
       <div className="flex flex-col">
-        <div className="-my-2 overflow-x-auto -mx-4 sm:-mx-6 lg:-mx-8">
-          <div className="py-2 align-middle inline-block sm:px-6 lg:px-8">
+        <div className="overflow-x-auto">
+          <div className="align-middle inline-block">
             <div className="overflow-hidden">
               <table {...getTableProps()} className="divide-y divide-gray-200">
                 <thead >
