@@ -128,10 +128,10 @@ function View({...rest}) {
 
   return (
     <div className={cn("bg-black w-screen h-screen flex flex-row relative h-full")}>
-      <div className={cn("lg:w-1/5 sm:hidden h-full p-1 bg-secondary rounded")}>
+      <div className={cn("lg:w-1/5 relative h-full p-1 bg-secondary rounded")}>
         <Tree jsonData={tree_data} />
       </div>
-      <div className={cn("lg:w-4/5 h-full overflow-auto p-1 bg-secondary rounded lg:ml-4 ml-2")}>
+      <div className={cn("lg:w-4/5 relative h-full overflow-auto p-1 bg-secondary rounded lg:ml-4 ml-2")}>
         <Table columns={columns} data={data} />
       </div>
     </div>
