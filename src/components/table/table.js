@@ -28,9 +28,6 @@ function Table({ columns, data }) {
     setPageSize,
 
     state,
-    preGlobalFilteredRows,
-    setGlobalFilter,
-    resetResizing,
   } = useTable({
     columns,
     data,

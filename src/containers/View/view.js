@@ -4,11 +4,7 @@ import Tree from '../../components/tree/tree'
 import Table from '../../components/table/table'
 
 const tree_data = {
-  id: 'root',
-  name: 'ASSET CLASSIFICATION',
-  children: [
-    {
-      id: '0',
+      id: 'root',
       name: 'LEVEL 00',
       children: [
         {
@@ -46,9 +42,7 @@ const tree_data = {
           ],
         },
       ],
-    },
-  ],
-};
+    };
 
 const getData = () => {
   const data = [
