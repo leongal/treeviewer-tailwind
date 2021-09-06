@@ -7,6 +7,7 @@ module.exports = {
         'primary': '#676767',
         'secondary': '#807f81',
         'third': '#cdcdcd',
+        'root_node': '#242424',
       },
     },
   },

@@ -15,7 +15,7 @@ function Tree({ jsonData, children, className, ...rest }) {
   const [showTree, setshowTree] = useState(false)
   return (
     <div className={cn("bg-primary")}>
-      <div className={"bg-black text-white text-center cursor-pointer"} onClick={() => setshowTree(!showTree)}>
+      <div className={"bg-black text-white text-center cursor-pointer bg-root_node"} onClick={() => setshowTree(!showTree)}>
         ASSET CLASSIFICATION
         <span>
           {showTree ? <SortDownIcon className="w-4 h-4 text-white" /> : <SortUpIcon className="w-4 h-4 text-white" />}
