@@ -104,7 +104,7 @@ function Table({ columns, data }) {
                                 ? <div className="lg:text-sm sm:text-xs">{cell.render('Cell')}</div>
                                 : cell.render('Cell')
                               } */}
-                              <div className="lg:text-sm sm:text-xs">{cell.render('Cell')}</div>
+                              <div className="lg:text-sm text-xs">{cell.render('Cell')}</div>
                             </td>
                           )
                         })}
