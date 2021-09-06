@@ -61,7 +61,7 @@ function Table({ columns, data }) {
                         // we can add them into the header props
                         <th
                           {...column.getHeaderProps(column.getSortByToggleProps())}
-                          className={"px-6 py-3 text-xs font-medium tracking-wider bg-black border border-secondary text-white"}
+                          className={"py-3 text-xs font-medium tracking-wider bg-black border border-secondary text-white"}
                         >
                           <div className="flex items-center text-center justify-center overflow-ellipsis overflow-hidden">
                             {column.render('Header')}
