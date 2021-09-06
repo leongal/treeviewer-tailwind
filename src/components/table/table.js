@@ -2,7 +2,6 @@ import React from 'react'
 import { useTable, useFilters, useGlobalFilter, useSortBy, usePagination, useResizeColumns, useBlockLayout } from 'react-table'
 import { ChevronDoubleLeftIcon, ChevronLeftIcon, ChevronRightIcon, ChevronDoubleRightIcon } from '@heroicons/react/solid'
 import { Button, PageButton } from '../../assets/Button'
-import { classNames } from '../../assets/Utils'
 import { SortIcon, SortUpIcon, SortDownIcon } from '../../assets/Icons'
 
 // This is a custom filter UI for selecting
