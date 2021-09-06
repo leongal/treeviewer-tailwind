@@ -63,7 +63,7 @@ function Table({ columns, data }) {
                           {...column.getHeaderProps(column.getSortByToggleProps())}
                           className={"px-6 py-3 text-xs font-medium tracking-wider bg-black border border-secondary text-white"}
                         >
-                          <div className="flex items-center text-center justify-center">
+                          <div className="flex items-center text-center justify-center overflow-ellipsis overflow-hidden">
                             {column.render('Header')}
                             {/* Add a sort direction indicator */}
                             <span>
@@ -97,14 +97,14 @@ function Table({ columns, data }) {
                           return (
                             <td
                               {...cell.getCellProps()}
-                              className="px-3 text-center border border-secondary"
+                              className="text-center border border-secondary"
                               role="cell"
                             >
                               {/* {cell.column.Cell.name === "defaultRenderer"
                                 ? <div className="lg:text-sm sm:text-xs">{cell.render('Cell')}</div>
                                 : cell.render('Cell')
                               } */}
-                              <div className="lg:text-sm text-xs">{cell.render('Cell')}</div>
+                              <div className="lg:text-sm text-xs overflow-ellipsis overflow-hidden">{cell.render('Cell')}</div>
                             </td>
                           )
                         })}
