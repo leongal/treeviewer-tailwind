@@ -128,7 +128,7 @@ function View({...rest}) {
       <div className={ cn( showTree ? "left-1/2.27 " : "", "md:hidden block top-1/2 fixed z-20 h-8 w-8 rounded-3xl opacity-50 hover:opacity-100 bg-white") } onClick={() => setshowTree(!showTree)}>
         { showTree ? <ChevronLeftIcon className="text-gray-400" aria-hidden="true" /> : <ChevronRightIcon className="text-gray-400" aria-hidden="true" /> }
       </div>
-      <div className={cn( showTree ? "block  shadow-2xl" : "hidden", "w-1/2 md:block md:w-1/5 fixed z-10 left-0 top-0 md:relative h-full p-1 bg-secondary rounded")}>
+      <div className={cn( showTree ? "block shadow-2xl" : "hidden", "w-1/2 md:block md:w-1/5 fixed z-10 left-0 top-0 md:relative h-full p-1 bg-secondary rounded")}>
         <Tree jsonData={tree_data} />
       </div>
       <div className={cn("md:w-4/5 w-full relative h-full overflow-auto p-1 bg-secondary rounded md:ml-4")}>
