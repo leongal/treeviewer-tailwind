@@ -2,5 +2,12 @@ Sir, I will refund the money on Upwork if you complete the project.
 Please send me money to this crash.delamendoza@gmail.com this is my payoneer account.
 I hope you contact me on Skype curiouswolf826@outlook.com this is my Skype email.
 Could you please let me know your skype id? So I can add you.
+<<<<<<< HEAD
 You are my first client in freelancing world.
 If you have another job for me, I want to work with you.
+=======
+You are my first boss in freelancing world.
+If you have another job for me, I want to work with you.
+I will not let you down.
+Thanks.
+>>>>>>> 67b70c9 (update)
